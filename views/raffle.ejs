@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><%= raffleName %></title>
+		<style>
+		.raffle-info {
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.raffle-info h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px;
+		}
+		.raffle-info div {
+			width: 300px;
+			margin: 0 auto;
+		}
+		.raffle-info input[type="password"] {
+			width: 100%;
+			padding: 16px;
+			border: 1px solid #dddddd;
+			box-sizing: border-box;
+		}
+		.raffle-info input[type="button"],
+		.raffle-info input[type="submit"] {
+			width: 100%;
+			padding: 16px;
+			margin: 0px 0px 16px 0px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="raffle-info">
+			<h1><%= raffleName %></h1>
+			<div>
+				<p>Status: <%= status %></p>
+				<% if (result !== null) { %>
+					<p>Result: <%= result %></p>
+				<% } else { %>
+					<input type="button" onclick="location.href='join';" value="Join" />
+					
+					<form action="close" method="POST">
+						<% if (!canClose) { %>
+							<input type="password" name="password" placeholder="Password" required>
+						<% } %>
+						<input type="submit", value="Close"/>
+					</form>
+				<% } %>
+			</div>
+		</div>
+	</body>
+</html>

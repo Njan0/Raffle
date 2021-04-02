@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Join: <%= raffleName %></title>
+		<style>
+		.raffle-join {
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.raffle-join h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px;
+		}
+		.raffle-join div {
+			width: 300px;
+			margin: 0 auto;
+		}
+		.raffle-join input[type="text"] {
+			width: 100%;
+			padding: 16px;
+			border: 1px solid #dddddd;
+			margin-bottom: 16px;
+			box-sizing: border-box;
+		}
+		.raffle-join input[type="submit"] {
+			width: 100%;
+			padding: 16px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="raffle-join">
+			<h1>Add ticket to raffle: <%= raffleName %></h1>
+			<div>
+				<form action="apply" method="POST">
+					<input type="text" name="content" placeholder="Text of your ticket">
+					<input type="submit", value="<%= action %>"/>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
